@@ -7,7 +7,6 @@ dotenv.config();
 export default function authentication(req: Request, res: Response, next: NextFunction) {
   try {
     const token = req.headers.authorization?.split(" ")[1];
-    console.log(req.headers);
 
     if (!token) return next(createError("Token not provided", 401));
 

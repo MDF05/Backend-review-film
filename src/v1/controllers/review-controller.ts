@@ -112,6 +112,7 @@ class ReviewController {
       const reviews = await reviewServices.delete(`${reviewId}`);
       successResponse(req, res, { reviews });
     } catch (err) {
+      console.log(err);
       if (err instanceof Error) next(createError(err.message, 401));
       else next(createError("server error: ", 500));
     }
