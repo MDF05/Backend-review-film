@@ -5,8 +5,8 @@
   "scripts": {
     "build": "prisma generate && npx tsc",
     "postinstall": "npx prisma generate",
-    "start": "nodemon --exec babel-node src/app.ts",
-    "swagger": "node ./swagger/swagger.js",
+    "start": "nodemon --exec babel-node swagger/swagger.js",
+    "swagger": "node --exec babel-node ./swagger/swagger.js",
     "dev": "nodemon src/app.ts"
   },
   "keywords": [],
