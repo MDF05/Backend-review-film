@@ -3,18 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.ts",
-    "dev": "nodemon src/app.ts",
     "build": "prisma generate && npx tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "npx prisma generate",
-    "swagger": "node ./src/swagger/swagger.js"
+    "start": "nodemon --exec babel-node src/app.ts",
+    "swagger": "node ./swagger/swagger.js",
+    "dev": "nodemon src/app.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/node": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
     "@prisma/client": "^6.1.0",
     "bcrypt": "^5.1.1",
     "cloudinary": "^2.5.1",

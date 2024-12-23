@@ -3,7 +3,7 @@ import AuthRouter from "../v1/routers/auth-router";
 import ProfileRouter from "../v1/routers/profile-router";
 import ReviewRouter from "../v1/routers/review-router";
 import swaggerUI from "swagger-ui-express";
-import swaggerDocument from "../swagger/swagger-output.json";
+import swaggerDocument from "../../swagger/swagger-output.json";
 
 const V1Router = Router();
 
