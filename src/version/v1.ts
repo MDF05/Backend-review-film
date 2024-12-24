@@ -21,6 +21,6 @@ V1Router.use(ReviewRouter);
 
 // "swagger-ui-express": "^4.6.2" perhatikan swagger version di atas ini tidak bisa di deploy ke vercel
 const specs = swaggerJsDoc({definition : swaggerDocument, apis: [] });
-V1Router.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs, {customCssUrl : CSS_URL}));
+V1Router.use("/", swaggerUI.serve, swaggerUI.setup(specs, {customCssUrl : CSS_URL}));
 
 export default V1Router;
