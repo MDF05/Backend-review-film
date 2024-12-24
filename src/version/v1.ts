@@ -3,7 +3,7 @@ import AuthRouter from "../v1/routers/auth-router";
 import ProfileRouter from "../v1/routers/profile-router";
 import ReviewRouter from "../v1/routers/review-router";
 import swaggerUI from "swagger-ui-express";
-// import swaggerDocument from "../../swagger/swagger-output.json";
+import swaggerDocument from "../../swagger/swagger-output.json";
 import swaggerJsDoc from "swagger-jsdoc";
 import  bodyParser  from 'body-parser';
 
@@ -16,11 +16,6 @@ V1Router.use(AuthRouter);
 V1Router.use(ProfileRouter);
 V1Router.use(ReviewRouter);
 
-
-
-// const specs = swaggerJsDoc({definition : swaggerDocument, apis: [] });
-
-// V1Router.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs, { customCssUrl: CSS_URL }));
 
 
 
@@ -52,7 +47,7 @@ const options = {
   apis: ["src/**/*.js"],
 };
 
-const specs = swaggerJsDoc(options);
+const specs = swaggerJsDoc({definition : swaggerDocument, apis: [] });
 
 V1Router.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs, { customCssUrl: CSS_URL }));
 
