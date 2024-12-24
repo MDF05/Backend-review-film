@@ -4,6 +4,8 @@ import ProfileRouter from "../v1/routers/profile-router";
 import ReviewRouter from "../v1/routers/review-router";
 import swaggerUI from "swagger-ui-express";
 import swaggerDocument from "../../swagger/swagger-output.json";
+const CSS_URL =
+  "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 
 const V1Router = Router();
 
@@ -18,6 +20,7 @@ V1Router.use(
     swaggerOptions: {
       persistAuthorization: true,
       displayRequestDuration: true,
+      customCssUrl: CSS_URL
     },
   }),
 );

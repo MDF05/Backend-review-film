@@ -11,9 +11,9 @@ const doc = {
         description: "API Documentation",
     },
     servers: [
-        // {
-        //   url: "http://localhost:3000/api/v1",
-        // },
+        {
+            url: "http://localhost:3000/api/v1",
+        },
         {
             url: "https://backend-review-film-git-dev-mdf05s-projects.vercel.app/",
         },
