@@ -15,14 +15,7 @@ V1Router.use(ReviewRouter);
 V1Router.use(
   "/",
   swaggerUI.serve,
-  swaggerUI.setup(swaggerDocument, {
-    explorer: true,
-    swaggerOptions: {
-      persistAuthorization: true,
-      displayRequestDuration: true,
-      customCssUrl: CSS_URL
-    },
-  }),
+  swaggerUI.setup(swaggerDocument, { customCssUrl: CSS_URL })
 );
 
 export default V1Router;
