@@ -17,8 +17,7 @@ V1Router.use(ReviewRouter);
 
 
 
-const specs = swaggerJsDoc({definition : swaggerDocument, apis: ["src/**/*.js"] });
-// app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
+const specs = swaggerJsDoc({definition : swaggerDocument, apis: [] });
 
 V1Router.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs, { customCssUrl: CSS_URL }));
 
