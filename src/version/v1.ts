@@ -10,6 +10,9 @@ import  bodyParser  from 'body-parser';
   // const CSS_URL =
   //   "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 
+  const CSS_URL =
+    "https://backend-review-film-git-dev-mdf05s-projects.vercel.app/assets/css/swagger.css";
+
 const V1Router = Router();
 
 V1Router.use(AuthRouter);
@@ -49,6 +52,6 @@ const options = {
 
 const specs = swaggerJsDoc({definition : swaggerDocument, apis: [] });
 
-V1Router.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
+V1Router.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs, {customCssUrl : CSS_URL}));
 
 export default V1Router;
