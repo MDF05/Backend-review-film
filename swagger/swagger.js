@@ -1,5 +1,3 @@
-const { release } = require("os")
-
 const swaggerAutogen = require("swagger-autogen")({
     openapi: "3.0.0",
     autoHeaders: false,
