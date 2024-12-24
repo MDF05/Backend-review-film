@@ -3,7 +3,7 @@ import AuthRouter from "../v1/routers/auth-router";
 import ProfileRouter from "../v1/routers/profile-router";
 import ReviewRouter from "../v1/routers/review-router";
 import swaggerUI from "swagger-ui-express";
-import swaggerDocument from "../../swagger/swagger-output.json";
+import swaggerDocument from "../v1/swagger/swagger-output.json";
 import swaggerJsDoc from "swagger-jsdoc";
 
   // const CSS_URL =
@@ -19,7 +19,7 @@ V1Router.use(ProfileRouter);
 V1Router.use(ReviewRouter);
 
 
-// "swagger-ui-express": "^4.6.2" perhatikan swagger version di atas ini tidak bisa di deploy ke vercel
+// "swagger-ui-express": "^4.6.2" perhatikan swagger version di atas version ini tidak bisa di deploy ke vercel
 const specs = swaggerJsDoc({definition : swaggerDocument, apis: [] });
 V1Router.use("/", swaggerUI.serve, swaggerUI.setup(specs, {customCssUrl : CSS_URL}));
 

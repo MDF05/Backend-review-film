@@ -9,7 +9,7 @@
     "dev": "nodemon src/app.ts",
     "clean": "rm -rf dist",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "swagger": "node ./swagger/swagger.js"
+    "swagger": "node ./src/v1/swagger/swagger.js"
   },
   "keywords": [],
   "author": "",
