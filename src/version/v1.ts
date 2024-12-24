@@ -9,8 +9,15 @@ import swaggerJsDoc from "swagger-jsdoc";
   // const CSS_URL =
   //   "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 
+  // ! dev url
+  // const CSS_URL =
+  //   "https://backend-review-film-git-dev-mdf05s-projects.vercel.app/assets/css/swagger.css";
+
+
   const CSS_URL =
-    "https://backend-review-film-git-dev-mdf05s-projects.vercel.app/assets/css/swagger.css";
+    "https://backend-review-film.vercel.app/assets/css/swagger.css";
+
+  
 
 const V1Router = Router();
 
