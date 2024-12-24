@@ -3,8 +3,9 @@ import AuthRouter from "../v1/routers/auth-router";
 import ProfileRouter from "../v1/routers/profile-router";
 import ReviewRouter from "../v1/routers/review-router";
 import swaggerUI from "swagger-ui-express";
-import swaggerDocument from "../../swagger/swagger-output.json";
+// import swaggerDocument from "../../swagger/swagger-output.json";
 import swaggerJsDoc from "swagger-jsdoc";
+import  bodyParser  from 'body-parser';
 
 const CSS_URL =
   "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
@@ -20,6 +21,11 @@ V1Router.use(ReviewRouter);
 // const specs = swaggerJsDoc({definition : swaggerDocument, apis: [] });
 
 // V1Router.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs, { customCssUrl: CSS_URL }));
+
+
+
+V1Router.use(bodyParser.json()); // to use body object in requests
+
 
 const options = {
   definition: {
