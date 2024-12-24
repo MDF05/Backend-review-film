@@ -7,8 +7,8 @@ import swaggerDocument from "../../swagger/swagger-output.json";
 import swaggerJsDoc from "swagger-jsdoc";
 import  bodyParser  from 'body-parser';
 
-// const CSS_URL =
-//   "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
+  // const CSS_URL =
+  //   "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 
 const V1Router = Router();
 

@@ -4,12 +4,14 @@ import createError, { CreateError } from "./v1/utils/create-error";
 import { errorResponse } from "./v1/utils/response-error";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
 dotenv.config();
 //
 const port = process.env.PORT || 3000;
 const app = express();
 
 //s
+app.use("/assets", express.static(path.join(__dirname, "/assets")))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
