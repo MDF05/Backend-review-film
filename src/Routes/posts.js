@@ -1,10 +1,10 @@
-import express from "express";
-import bodyParser from "body-parser";
-import data from "../Data/data.js";
+import express from "express"
+import bodyParser from "body-parser"
+import data from "../Data/data.js"
 
-const postRouter = express.Router();
+const postRouter = express.Router()
 
-postRouter.use(bodyParser.json()); // to use body object in requests
+postRouter.use(bodyParser.json()) // to use body object in requests
 
 /**
  * @swagger
@@ -62,8 +62,8 @@ postRouter.use(bodyParser.json()); // to use body object in requests
  */
 
 postRouter.get("/", (req, res) => {
-  res.send(data);
-});
+    res.send(data)
+})
 
 /**
  * @swagger
@@ -90,14 +90,14 @@ postRouter.get("/", (req, res) => {
  */
 
 postRouter.get("/:id", (req, res) => {
-  const post = data.find((post) => post.id === +req.params.id);
+    const post = data.find((post) => post.id === +req.params.id)
 
-  if (!post) {
-    res.sendStatus(404);
-  }
+    if (!post) {
+        res.sendStatus(404)
+    }
 
-  res.send(post);
-});
+    res.send(post)
+})
 
 /**
  * @swagger
@@ -123,19 +123,19 @@ postRouter.get("/:id", (req, res) => {
  */
 
 postRouter.post("/", (req, res) => {
-  try {
-    const post = {
-      ...req.body,
-      id: data.length + 1,
-    };
+    try {
+        const post = {
+            ...req.body,
+            id: data.length + 1,
+        }
 
-    data.push(post);
+        data.push(post)
 
-    res.send(post);
-  } catch (error) {
-    return res.status(500).send(error);
-  }
-});
+        res.send(post)
+    } catch (error) {
+        return res.status(500).send(error)
+    }
+})
 
 /**
  * @swagger
@@ -159,15 +159,15 @@ postRouter.post("/", (req, res) => {
  */
 
 postRouter.delete("/:id", (req, res) => {
-  let post = data.find((post) => post.id === +req.params.id);
-  const index = data.indexOf(post);
+    let post = data.find((post) => post.id === +req.params.id)
+    const index = data.indexOf(post)
 
-  if (post) {
-    data.splice(index, 1);
-    res.sendStatus(200);
-  } else {
-    res.sendStatus(404);
-  }
-});
+    if (post) {
+        data.splice(index, 1)
+        res.sendStatus(200)
+    } else {
+        res.sendStatus(404)
+    }
+})
 
-export default postRouter;
+export default postRouter
