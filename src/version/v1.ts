@@ -7,8 +7,8 @@ import swaggerDocument from "../../swagger/swagger-output.json";
 import swaggerJsDoc from "swagger-jsdoc";
 import  bodyParser  from 'body-parser';
 
-const CSS_URL =
-  "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
+// const CSS_URL =
+//   "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 
 const V1Router = Router();
 
@@ -49,6 +49,6 @@ const options = {
 
 const specs = swaggerJsDoc({definition : swaggerDocument, apis: [] });
 
-V1Router.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs, { customCssUrl: CSS_URL }));
+V1Router.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
 
 export default V1Router;
